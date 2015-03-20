@@ -37,6 +37,8 @@ NeoBundle 'taq/vim-git-branch-info'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
@@ -476,3 +478,5 @@ au FileType ruby map <leader>\ :!ruby %
 
 vnoremap <leader>] :!xclip -in -selection clipboard && xclip -out -selection clipboard<CR>
 nnoremap <leader>[ :r!xclip -out -selection clipboard<CR>
+
+nmap <C-n> :NERDTreeFocus<CR>

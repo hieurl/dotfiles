@@ -27,3 +27,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/X11/bin
+
+export PATH="$PATH:$HOME/.rvm/bin:/opt/idea/bin" # Add RVM to PATH for scripting
+fuck () {
+    ps aux | grep $1 | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9
+    echo "(╯°□°)╯ $1"
+}
