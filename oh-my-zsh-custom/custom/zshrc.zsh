@@ -91,7 +91,7 @@ export KEYTIMEOUT=1
 #alias sudo='sudo '
 alias ln='nocorrect ln'
 alias lsa='ls -alkiGF'
-alias rm='rm -r'
+#alias rm='rm -r'
 alias cp='cp -vr'
 
 # Aliases for tar command
@@ -112,7 +112,7 @@ alias cp='cp -vr'
 find $HOME/.vimbackup -name "*" -type f -mtime +90 -exec rm -f {} \;
 
 typeset -U cdpath
-cdpath=( . $cdpath ~ /Volumes/Haru/Users/tessa ~/Dropbox/synchronized ~/wip ~/src / )
+cdpath=( . $cdpath ~ ~/workspace / )
 
 if [[ -d $HOME/Dropbox/Public/ss ]]; then
     find $HOME/Dropbox/Public/ss \
@@ -134,16 +134,14 @@ if uname | grep Darwin >> /dev/null; then
 
 fi
 
-#. /Users/pxt/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+function cd() {
+    builtin cd "$@"
+    ls 
+}
 
 alias slock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 cd () {
     builtin cd "$@" && ls
-}
-
-fuck () { 
-    ps aux | grep -i "$1" | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9
-    echo "fuck you $1"
 }
 
 alias smutt="mbsync -a ; mutt"
@@ -151,3 +149,14 @@ alias updatedb="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.l
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home
 alias vpn-hoiio="sudo /sbin/openvpn /private/etc/openvpn/hieu.conf"
 export EDITOR=/usr/local/bin/vim
+export BROWSER=/usr/bin/google-chrome
+
+alias rabbitmq_ws='$BROWSER http://localhost:15672'
+
+alias idea="/opt/idea/bin/idea.sh > /dev/null 2>&1 &"
+
+export PATH="$PATH:$HOME/.rvm/bin:/opt/idea/bin" # Add RVM to PATH for scripting
+fuck () {
+    ps aux | grep $1 | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9
+    echo "(╯°□°)╯ $1"
+}
