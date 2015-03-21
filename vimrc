@@ -37,6 +37,7 @@ NeoBundle 'taq/vim-git-branch-info'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 

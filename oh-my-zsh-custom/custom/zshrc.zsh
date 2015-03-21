@@ -136,5 +136,18 @@ fi
 
 #. /Users/pxt/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
+alias slock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+cd () {
+    builtin cd "$@" && ls
+}
 
+fuck () { 
+    ps aux | grep -i "$1" | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9
+    echo "fuck you $1"
+}
 
+alias smutt="mbsync -a ; mutt"
+alias updatedb="sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home
+alias vpn-hoiio="sudo /sbin/openvpn /private/etc/openvpn/hieu.conf"
+export EDITOR=/usr/local/bin/vim

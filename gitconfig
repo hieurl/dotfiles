@@ -1,8 +1,9 @@
 [user]
-	name = pxt
-	email = xtpham@hoiio.com
+	name = hieurl
+	email = thluong@hoiio.com
 [core]
 	excludesfile = ~/.gitignore
+	editor = /usr/local/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
