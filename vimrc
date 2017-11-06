@@ -80,7 +80,7 @@ set expandtab
 set autoindent
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
 
-set textwidth=72                 " Set textwidth
+set textwidth=720                 " Set textwidth
 
 " Folding settings
 set foldmethod=indent           " Fold based on indent
