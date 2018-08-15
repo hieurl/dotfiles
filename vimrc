@@ -39,6 +39,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'Glench/Vim-Jinja2-Syntax'
 
 call neobundle#end()
 
